@@ -30,11 +30,6 @@ try:
             print(extracted_book)
 
 
-    display_search_result()
-    driver.implicitly_wait(15)
-    book_to_download = input("Enter the name of the book you want downloaded:\t")
-
-
     def get_download_link(selected_book):
         driver.get(book_list.get(selected_book)[0])
         image_url = book_list.get(selected_book)[1]
@@ -47,7 +42,5 @@ try:
         print(download_link.get_attribute('href'))
         print(image_url)
 
-
-    get_download_link(book_to_download)
 finally:
     driver.quit()
